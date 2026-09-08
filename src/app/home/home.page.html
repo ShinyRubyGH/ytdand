@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Downloader Universal
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div id="container">
+    <p>Descarga videos de YouTube, TikTok e Instagram (sin marca de agua)</p>
+
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Dirección del Servidor (PC)</label>
+        <ion-input [(ngModel)]="serverUrl" placeholder="Ej: http://192.168.1.15:5000" type="url"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Enlace del video</label>
+        <ion-input [(ngModel)]="videoUrl" placeholder="https://..." type="url" clearInput="true"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Formato / Calidad</label>
+        <ion-select [(ngModel)]="formatType" interface="action-sheet">
+          <ion-select-option value="1080">Video MP4 (1080p)</ion-select-option>
+          <ion-select-option value="1440">Video MP4 (1440p+)</ion-select-option>
+          <ion-select-option value="720">Video MP4 (720p)</ion-select-option>
+          <ion-select-option value="480">Video MP4 (480p)</ion-select-option>
+          <ion-select-option value="mp3">Solo Audio (MP3)</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding-top">
+      <ion-button expand="block" (click)="downloadVideo()" [disabled]="!videoUrl || !serverUrl">
+        <ion-icon slot="start" name="download-outline"></ion-icon>
+        Descargar
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
