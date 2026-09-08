@@ -12,17 +12,17 @@
 
     <ion-list>
       <ion-item>
-        <ion-label position="stacked">Dirección del Servidor (PC)</label>
+        <ion-label position="stacked">Dirección del Servidor (PC)</ion-label>
         <ion-input [(ngModel)]="serverUrl" placeholder="Ej: http://192.168.1.15:5000" type="url"></ion-input>
       </ion-item>
       
       <ion-item>
-        <ion-label position="stacked">Enlace del video</label>
+        <ion-label position="stacked">Enlace del video</ion-label>
         <ion-input [(ngModel)]="videoUrl" placeholder="https://..." type="url" clearInput="true"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-label position="stacked">Formato / Calidad</label>
+        <ion-label position="stacked">Formato / Calidad</ion-label>
         <ion-select [(ngModel)]="formatType" interface="action-sheet">
           <ion-select-option value="1080">Video MP4 (1080p)</ion-select-option>
           <ion-select-option value="1440">Video MP4 (1440p+)</ion-select-option>
